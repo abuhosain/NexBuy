@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useDispatch } from 'react-redux';
+import Link from 'next/link';
 import { addToCart } from '@/store/features/cartSlice';
 import type { Product } from '@/store/features/cartSlice';
 
@@ -19,15 +20,21 @@ export default function ProductCard({ product }: ProductCardProps) {
       whileHover={{ y: -5 }}
       className="bg-white rounded-lg shadow-md overflow-hidden"
     >
-      <div className="relative h-48 w-full">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="w-full h-full object-cover"
-        />
-      </div>
+      <Link href={`/products/${product.id}`}>
+        <div className="relative h-48 w-full cursor-pointer">
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </Link>
       <div className="p-4">
-        <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
+        <Link href={`/products/${product.id}`}>
+          <h3 className="text-lg font-semibold text-gray-800 hover:text-indigo-600 transition-colors">
+            {product.name}
+          </h3>
+        </Link>
         <p className="mt-1 text-sm text-gray-600 line-clamp-2">{product.description}</p>
         <div className="mt-4 flex items-center justify-between">
           <span className="text-xl font-bold text-indigo-600">${product.price}</span>
