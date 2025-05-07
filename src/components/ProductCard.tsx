@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useDispatch } from 'react-redux';
 import Link from 'next/link';
+import Image from 'next/image';
 import { addToCart } from '@/store/features/cartSlice';
 import type { Product } from '@/store/features/cartSlice';
 
@@ -22,10 +23,11 @@ export default function ProductCard({ product }: ProductCardProps) {
     >
       <Link href={`/products/${product.id}`}>
         <div className="relative h-48 w-full cursor-pointer">
-          <img
+          <Image
             src={product.image}
             alt={product.name}
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
         </div>
       </Link>

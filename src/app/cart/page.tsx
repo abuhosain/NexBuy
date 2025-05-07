@@ -1,6 +1,7 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/store/store';
 import { removeFromCart, updateQuantity } from '@/store/features/cartSlice';
@@ -43,9 +44,11 @@ export default function Cart() {
                     exit={{ opacity: 0, x: 20 }}
                     className="flex items-center space-x-4 bg-white p-4 rounded-lg shadow-sm mb-4"
                   >
-                    <img
+                    <Image
                       src={item.image}
                       alt={item.name}
+                      width={96}
+                      height={96}
                       className="w-24 h-24 object-cover rounded-md"
                     />
                     <div className="flex-1">

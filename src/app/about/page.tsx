@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import { 
   ShoppingBagIcon, 
@@ -63,7 +64,7 @@ export default function AboutPage() {
         >
           <h1 className="text-4xl font-bold text-gray-900 mb-4">About Us</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We're passionate about bringing you the best tech products with exceptional service and support.
+            We&apos;re passionate about bringing you the best tech products with exceptional service and support.
           </p>
         </motion.div>
 
@@ -116,9 +117,11 @@ export default function AboutPage() {
                 whileHover={{ y: -5 }}
                 className="bg-white rounded-lg shadow-md overflow-hidden"
               >
-                <img
+                <Image
                   src={member.image}
                   alt={member.name}
+                  width={500}
+                  height={256}
                   className="w-full h-64 object-cover"
                 />
                 <div className="p-4">
@@ -139,7 +142,7 @@ export default function AboutPage() {
         >
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Get in Touch</h2>
           <p className="text-gray-600 mb-6">
-            Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
