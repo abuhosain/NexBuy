@@ -77,7 +77,7 @@ export default function AboutPage() {
         >
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h2>
           <p className="text-gray-600">
-            Our mission is to provide high-quality technology products that enhance people's lives while delivering
+            Our mission is to provide high-quality technology products that enhance people&apos;s lives while delivering
             exceptional customer service. We believe in making technology accessible, reliable, and enjoyable for everyone.
           </p>
         </motion.div>
